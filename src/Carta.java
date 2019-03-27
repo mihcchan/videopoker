@@ -48,8 +48,8 @@ public class Carta {
             return false;
         }
         Carta carta = (Carta) o;
-        return numero == carta.numero &&
-                naipe == carta.naipe;
+        return this.numero == carta.numero &&
+                this.naipe == carta.naipe;
     }
 
 /*

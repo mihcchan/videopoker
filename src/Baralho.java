@@ -27,7 +27,7 @@ public class Baralho {
     public Carta[] sortear() throws InterruptedException {
 
         /*Carta[] valorCarta = new Carta[5];*/
-        cartasDaMao[0] = this.cartasDaMao[0].sortearNovaCarta();
+        this.cartasDaMao[0] = this.cartasDaMao[0].sortearNovaCarta();
         for (int i = 1; i < 5; i++) {
             for (int j = i - 1; j >= 0; j--) {
                 cartasDaMao[i] = this.cartasDaMao[i].sortearNovaCarta();
@@ -55,9 +55,8 @@ public class Baralho {
                         Thread.currentThread().sleep(100);
                         cartasDaMao[i] = this.cartasDaMao[i].sortearNovaCarta();
                     }
-                    cartasJaTiradas.add(cartasDaMao[i]);
                 }
-            } else {
+                cartasJaTiradas.add(cartasDaMao[i]);} else {
                 cartasDaMao[i] = this.cartasDaMao[i];
             }
         }
