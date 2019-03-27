@@ -7,15 +7,13 @@ public class Carta {
 
     }
 
-    public Carta sortearNovaCarta(){
-        Carta carta = new Carta();
+    public void sortearNovaCarta(){
         /*Random random = new Random();
         this.numero = random.getIntRand(13) - 1;*/
-        this.numero = carta.sortearNumero();
+        this.numero = sortearNumero();
        /* Random random2 = new Random();
         this.naipe = random2.getIntRand(4) -1;*/
-       this.naipe = carta.sortearNaipe();
-        return carta;
+       this.naipe = sortearNaipe();
     }
 
 
@@ -68,5 +66,8 @@ public class Carta {
 
 */
 
-
+    @Override
+    public String toString() {
+        return "Carta{" + "numero=" + numero + ", naipe=" + naipe + '}';
+    }
 }
