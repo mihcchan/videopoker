@@ -1,7 +1,57 @@
-import java.util.ArrayList;
-import java.util.List;
 
 public class Carta {
+
+    private int numero, naipe;
+
+    public Carta(){
+
+    }
+
+    public Carta sortearNovaCarta(){
+        Carta carta = new Carta();
+        /*Random random = new Random();
+        this.numero = random.getIntRand(13) - 1;*/
+        this.numero = carta.sortearNumero();
+       /* Random random2 = new Random();
+        this.naipe = random2.getIntRand(4) -1;*/
+       this.naipe = carta.sortearNaipe();
+        return carta;
+    }
+
+
+    public int sortearNumero(){
+        Random random = new Random();
+        this.numero = random.getIntRand(13);
+        return this.numero;
+    }
+
+    public int sortearNaipe(){
+        Random random2 = new Random();
+        this.naipe = random2.getIntRand(4);
+        return naipe;
+    }
+
+    public int getNumero(){
+        return this.numero;
+    }
+
+    public int getNaipe(){
+        return this.naipe;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Carta carta = (Carta) o;
+        return numero == carta.numero &&
+                naipe == carta.naipe;
+    }
+
 /*
     - sortear um numero
     - sortear um naipe
@@ -17,7 +67,6 @@ public class Carta {
     - get naipe
 
 */
-//teste
 
 
 }
