@@ -13,30 +13,24 @@ public class VideoPoker {
         baralho.sortear();
         System.out.println(baralho.toString());
 
-//        System.out.println(Arrays.toString(baralho.getNumerosCartas(cartasMao)));
-//        System.out.println(Arrays.toString(baralho.getNaipesCartas(cartasMao)));
 
-//        System.out.println("Insira as cartas que quer descartar separadas por espaço. (segunda vez)");
-//        String segundaVez = EntradaTeclado.leString();
-//        try{
-//            cartasMao = baralho.sortear(segundaVez);
-//            System.out.println(Arrays.toString(baralho.getNumerosCartas(cartasMao)));
-//            System.out.println(Arrays.toString(baralho.getNaipesCartas(cartasMao)));
-//        } catch (NumberFormatException e) {
-//            System.out.println(Arrays.toString(baralho.getNumerosCartas(cartasMao)));
-//            System.out.println(Arrays.toString(baralho.getNaipesCartas(cartasMao)));
-//        }
-//
-//        System.out.println("Insira as cartas que quer descartar separadas por espaço. (terceira vez)");
-//        String terceiraVez = EntradaTeclado.leString();
-//        try {
-//            cartasMao = baralho.sortear(terceiraVez);
-//            System.out.println(Arrays.toString(baralho.getNumerosCartas(cartasMao)));
-//            System.out.println(Arrays.toString(baralho.getNaipesCartas(cartasMao)));
-//        } catch (NumberFormatException e) {
-//            System.out.println(Arrays.toString(baralho.getNumerosCartas(cartasMao)));
-//            System.out.println(Arrays.toString(baralho.getNaipesCartas(cartasMao)));
-//        }
+        System.out.println("Insira as cartas que quer descartar separadas por espaço. (segunda vez)");
+        String segundaVez = EntradaTeclado.leString();
+        try{
+            baralho.sortear(segundaVez);
+            System.out.println(baralho.toString());
+        } catch (NumberFormatException e) {
+            System.out.println(baralho.toString());
+        }
+
+        System.out.println("Insira as cartas que quer descartar separadas por espaço. (terceira vez)");
+        String terceiraVez = EntradaTeclado.leString();
+        try {
+            baralho.sortear(terceiraVez);
+            System.out.println(baralho.toString());
+        } catch (NumberFormatException e) {
+            System.out.println(baralho.toString());
+        }
 
 
     }

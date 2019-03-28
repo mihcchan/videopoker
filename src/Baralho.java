@@ -35,43 +35,38 @@ public class Baralho {
     }
 
 
-//    public Carta[] sortear(boolean[] quais) throws InterruptedException {
-//
-//        /*Carta[] novasCartas = new Carta[5];*/
-//        for (int i = 0; i < 5; i++) {
-//            if (quais[i] == true) {
-//                for (int j = cartasJaTiradas.size() - 1; j >= 0; j--) {
-//                    cartasDaMao[i] = this.cartasDaMao[i].sortearNovaCarta();
-//                    while (cartasDaMao[i].equals(cartasJaTiradas.get(j))) {
-//                        Thread.currentThread().sleep(100);
-//                        cartasDaMao[i] = this.cartasDaMao[i].sortearNovaCarta();
-//                    }
-//                }
-//                cartasJaTiradas.add(cartasDaMao[i]);} else {
-//                cartasDaMao[i] = this.cartasDaMao[i];
-//            }
-//        }
-//        return this.cartasDaMao;
-//
-//    }
+    public Carta[] sortear(boolean[] quais) throws InterruptedException {
 
-//    public Carta[] sortear(java.lang.String s) throws InterruptedException {
-//
-//
-//        boolean[] quais = new boolean[5];
-//        Arrays.fill(quais, Boolean.FALSE);
-//
-//        String[] separado = s.split(" ");
-//
-//        int tamanho = separado.length;
-//
-//        for (int i = 0; i < tamanho; i++) {
-//            int pos = Integer.valueOf(separado[i]) - 1;
-//            quais[pos] = true;
-//        }
-//
-//        return this.sortear(quais);
-//    }
+        for (int i = 0; i < 5; i++) {
+            if (quais[i] == true) {
+                this.cartasDaMao[i].sortearNovaCarta();
+                while (this.cartasJaTiradas.contains(this.cartasDaMao[i])) {
+                    this.cartasDaMao[i].sortearNovaCarta();
+                }
+            }
+            /*cartasJaTiradas.add(cartasDaMao[i]);*/
+        }
+        return this.cartasDaMao;
+
+    }
+
+    public Carta[] sortear(java.lang.String s) throws InterruptedException {
+
+
+        boolean[] quais = new boolean[5];
+        Arrays.fill(quais, Boolean.FALSE);
+
+        String[] separado = s.split(" ");
+
+        int tamanho = separado.length;
+
+        for (int i = 0; i < tamanho; i++) {
+            int pos = Integer.valueOf(separado[i]) - 1;
+            quais[pos] = true;
+        }
+
+        return this.sortear(quais);
+    }
 
 
     public String[] getNumerosCartas(Carta[] cartasDaMao){
