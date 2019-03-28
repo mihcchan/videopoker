@@ -22,35 +22,34 @@ public class Baralho {
     }
 
 
-    public Carta[] sortear() throws InterruptedException {
+    public void sortear() throws InterruptedException {
 
         for (int i = 0; i < 5; i++) {
             this.cartasDaMao[i].sortearNovaCarta();
             while (this.cartasJaTiradas.contains(this.cartasDaMao[i])) {
                 this.cartasDaMao[i].sortearNovaCarta();
             }
-            this.cartasJaTiradas.add(this.cartasDaMao[i]);
+            this.cartasJaTiradas.add(new Carta(this.cartasDaMao[i].getNumero(), this.cartasDaMao[i].getNaipe()));
         }
-        return this.cartasDaMao;
     }
 
 
-    public Carta[] sortear(boolean[] quais) throws InterruptedException {
+    public void sortear(boolean[] quais) throws InterruptedException {
 
         for (int i = 0; i < 5; i++) {
             if (quais[i] == true) {
                 this.cartasDaMao[i].sortearNovaCarta();
                 while (this.cartasJaTiradas.contains(this.cartasDaMao[i])) {
                     this.cartasDaMao[i].sortearNovaCarta();
+                    System.out.println("sorteio: " + this.cartasDaMao[i]);
                 }
+                this.cartasJaTiradas.add(new Carta(this.cartasDaMao[i].getNumero(), this.cartasDaMao[i].getNaipe()));
             }
             /*cartasJaTiradas.add(cartasDaMao[i]);*/
         }
-        return this.cartasDaMao;
-
     }
 
-    public Carta[] sortear(java.lang.String s) throws InterruptedException {
+    public void sortear(java.lang.String s) throws InterruptedException {
 
 
         boolean[] quais = new boolean[5];
@@ -65,7 +64,7 @@ public class Baralho {
             quais[pos] = true;
         }
 
-        return this.sortear(quais);
+        this.sortear(quais);
     }
 
 

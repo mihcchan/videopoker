@@ -7,6 +7,11 @@ public class Carta {
 
     }
 
+    public Carta(int numero, int naipe){
+        this.numero = numero;
+        this.naipe = naipe;
+    }
+
     public void sortearNovaCarta(){
         /*Random random = new Random();
         this.numero = random.getIntRand(13) - 1;*/
@@ -35,6 +40,14 @@ public class Carta {
 
     public int getNaipe(){
         return this.naipe;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public void setNaipe(int naipe) {
+        this.naipe = naipe;
     }
 
     @Override
