@@ -25,21 +25,12 @@ public class Random {
 		xi = (int) ((a + m * xi) % p);
 		double d = xi;
 		return d / p;
-
 	}
 
 	public int getIntRand(int max) {
 		double valorRand = getRand();
 
 		return (int) (Math.abs((max * valorRand)));
-
-/*	public int getIntRand(int max) {
-
-		double d = getRand() * max;
-		return (int) d;
-	}*/
-
-
 	}
 
 
